@@ -46,3 +46,29 @@ def test_default_question_of_lecture1_is_answerable_from_glossary():
     assert "3レベル" in DEFAULT_QUESTION
     hits = json.loads(tools.search_glossary("3レベル"))
     assert hits[0]["term"] == "宿題の3レベル"
+
+
+def test_save_learning_log_creates_markdown_file(monkeypatch, tmp_path):
+    log_dir = tmp_path / "learning_log"
+    monkeypatch.setattr(tools, "LEARNING_LOG_DIR", log_dir)
+    content = "# 今日の学習\nPydantic AI の承認付きツールを学んだ。"
+
+    message = tools.save_learning_log(content)
+
+    files = list(log_dir.glob("*.md"))
+    assert len(files) == 1
+    assert files[0].read_text(encoding="utf-8") == content
+    assert str(files[0].relative_to(tmp_path)) in message
+
+
+def test_save_learning_log_rejects_empty_content(monkeypatch, tmp_path):
+    log_dir = tmp_path / "learning_log"
+    monkeypatch.setattr(tools, "LEARNING_LOG_DIR", log_dir)
+
+    try:
+        tools.save_learning_log(" \n ")
+    except ValueError as error:
+        assert "記録を入力" in str(error)
+    else:
+        raise AssertionError("空の記録は保存できない")
+    assert not log_dir.exists()
