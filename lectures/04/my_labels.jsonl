@@ -1,0 +1,10 @@
+{"id":"01","grounding":"fail","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"fail","unsure_flag":false,"note":"承認が必要な書き込み操作であることや、承認待ちの仕組みを説明していない。"}
+{"id":"02","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"fail","unsure_flag":false,"note":""}
+{"id":"03","grounding":"pass","scope":"pass","hint":"pass","clarity":"fail","lecture_mark":"fail","unsure_flag":false,"note":"承認待ちの呼び出しは示されているが、内部表現のままで利用者に説明できていない。"}
+{"id":"04","grounding":"fail","scope":"pass","hint":"pass","clarity":"fail","lecture_mark":"pass","unsure_flag":false,"note":"一般論に終始し、DeferredToolRequests と output_type の問題を特定できていない。"}
+{"id":"05","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"fail","unsure_flag":false,"note":""}
+{"id":"06","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"fail","unsure_flag":false,"note":""}
+{"id":"07","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"pass","unsure_flag":false,"note":""}
+{"id":"08","grounding":"pass","scope":"pass","hint":"pass","clarity":"fail","lecture_mark":"fail","unsure_flag":false,"note":"空の質問だと明示せず、案内が広く長くなっている。"}
+{"id":"09","grounding":"fail","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"fail","unsure_flag":false,"note":"読み取りも基本的に事前承認必須とするのは、書き込みとの違いを捉えていない。"}
+{"id":"10","grounding":"fail","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"fail","unsure_flag":false,"note":"日付・タグは許容しているが、保存承認フローを維持することに触れていない。"}
